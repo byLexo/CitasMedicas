@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <string.h>
 
+#include "sistema.h"
+
 int main(int argc, char *argv[]) {
 
-  char option = '0';
+  char option[3] = "";
 
   printf("¡Bienvenido al Hospital de Kolinar!\n");
   printf("Seleccione una opción:\n");
@@ -12,13 +14,14 @@ int main(int argc, char *argv[]) {
   printf("3. Salir\n");
 
   do {
-    scanf(" %c", &option);
-    switch(option){
+    fgets(option, 3, stdin);
+    switch(option[0]){
       case '1':
         printf("Has seleccionado resgistrarte\n");
         break;
       case '2':
         printf("Has seleccionado acceder\n");
+        login_user();
         break;
       case '3':
         printf("Has seleccionado salir\n");
@@ -26,7 +29,7 @@ int main(int argc, char *argv[]) {
       default:
         break;
     }
-  } while (strcmp(&option, "3") != 0);
+  } while (option[0] != '3');
 
   return 0;
 
