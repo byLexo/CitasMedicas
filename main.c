@@ -5,7 +5,7 @@
 
 int main(int argc, char *argv[]) {
 
-  char option[3] = "";
+  char option = '*';
 
   printf("¡Bienvenido al Hospital de Kolinar!\n");
   printf("Seleccione una opción:\n");
@@ -14,10 +14,11 @@ int main(int argc, char *argv[]) {
   printf("3. Salir\n");
 
   do {
-    fgets(option, 3, stdin);
-    switch(option[0]){
+    option = fgetc(stdin);
+    switch(option){
       case '1':
         printf("Has seleccionado resgistrarte\n");
+        register_user();
         break;
       case '2':
         printf("Has seleccionado acceder\n");
@@ -29,7 +30,7 @@ int main(int argc, char *argv[]) {
       default:
         break;
     }
-  } while (option[0] != '3');
+  } while (option != '3');
 
   return 0;
 

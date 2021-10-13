@@ -7,11 +7,9 @@
 #include <string.h>
 
 #define DNI_SIZE 10
-#define PASS_SIZE 50
-
-#define PACIENTE 0
-#define DOCTOR 1
+#define PASS_SIZE 51
 
 int login_user (); 
+int register_user();
 
 #endif
